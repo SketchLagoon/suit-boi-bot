@@ -127,14 +127,14 @@ const channelAverageInteraction = async (recentUploadURLs, {low, mid, high}) => 
 
     return {
       channelName: channelName,
-      views: wholeNumAvg(viewCounts),
+      viewsPerVid: wholeNumAvg(viewCounts),
       averageActionRate: averageActionRate,
-      actions: {
-        likesCount: wholeNumAvg(likeCounts),
-        dislikesCount: wholeNumAvg(dislikeCounts),
-        commentCount: wholeNumAvg(commentCounts),
+      actionsPerVid: {
+        likesPerVid: wholeNumAvg(likeCounts),
+        dislikesPerVid: wholeNumAvg(dislikeCounts),
+        commentPerVid: wholeNumAvg(commentCounts),
       },
-      estimatedCost: {
+      estimatedCostPerVid: {
         low: `$${(wholeNumAvg(viewCounts)*low).toFixed(2)}`,
         mid: `$${(wholeNumAvg(viewCounts)*mid).toFixed(2)}`,
         high: `$${(wholeNumAvg(viewCounts)*high).toFixed(2)}`
